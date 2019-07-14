@@ -1,0 +1,231 @@
+$(document).ready(function() {
+	$(window).load(function() {
+		var $banner = $("#banner"),
+			$pc_1 = $("#pc-1"),
+			$pc_2 = $("#pc-2"),
+			$pc_item_psu = $("#pc-item-psu"),
+			$pc_item_fan_1 = $("#pc-item-fan-1"),
+			$pc_item_fan_2 = $("#pc-item-fan-2"),
+			$pc_item_fan_3 = $("#pc-item-fan-3"),
+			$logo = $("#logo"),
+			$text_1 = $("#text-1"),
+			$text_2 = $("#text-2"),
+			$cta_button = $("#clicktag-button-wrapper");
+		
+		//====================
+		// settings
+		//====================
+		
+		// 30 seconds playback
+		var times_played = 0;
+		var max_loops = 1;
+		
+		// pause times (seconds)
+		var pause_time_1 = 0.8;
+		var pause_time_2 = 1.5;
+		var pause_time_3 = 6;
+		var pause_time_4 = 0.2;
+		
+		// coordinates
+		
+		var pc_1_position = {
+			"postion1": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": 250,
+				"y": 0
+			},
+			"postion2": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": 0,
+				"y": 0
+			},
+			"postion3": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": -42,
+				"y": 0
+			},
+			"postion4": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": -139,
+				"y": 0
+			},
+			"postion5": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": -270,
+				"y": 0
+			}
+		};
+		
+		var pc_2_position = {
+			"postion1": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": 250,
+				"y": 0
+			},
+			"postion2": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": 0,
+				"y": 0
+			},
+			"postion3": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": -250,
+				"y": 0
+			}
+		};
+		
+		var hardware_position = {
+			"psu": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": -180,
+				"y": 35,
+			},
+			"fan_1": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": -250,
+				"y": 20,
+			},
+			"fan_2": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": -170,
+				"y": 0,
+			},
+			"fan_3": {
+				"scaleX": 1,
+				"scaleY": 1,
+				"x": -150,
+				"y": 0,
+			}
+		};
+		
+		var textOffset = -180;
+		
+		var tl = new TimelineLite();
+		
+		//====================
+		// set properties
+		//====================
+		
+		TweenLite.set($banner, {alpha:0});
+		
+		TweenLite.set($pc_1, {alpha:0, scaleX:pc_1_position.postion1.scaleX, scaleY:pc_1_position.postion1.scaleY, x:pc_1_position.postion1.x, y:pc_1_position.postion1.y});
+		TweenLite.set($pc_2, {alpha:0, scaleX:pc_2_position.postion1.scaleX, scaleY:pc_2_position.postion1.scaleY, x:pc_2_position.postion1.x, y:pc_2_position.postion1.y});
+		
+		TweenLite.set($pc_item_psu, {alpha:0, scaleX:hardware_position.psu.scaleX, scaleY:hardware_position.psu.scaleY, x:hardware_position.psu.x, y:hardware_position.psu.y});
+		TweenLite.set($pc_item_fan_1, {alpha:0, scaleX:hardware_position.fan_1.scaleX, scaleY:hardware_position.fan_1.scaleY, x:hardware_position.fan_1.x, y:hardware_position.fan_1.y});
+		TweenLite.set($pc_item_fan_2, {alpha:0, scaleX:hardware_position.fan_2.scaleX, scaleY:hardware_position.fan_2.scaleY, x:hardware_position.fan_2.x, y:hardware_position.fan_2.y});
+		TweenLite.set($pc_item_fan_3, {alpha:0, scaleX:hardware_position.fan_3.scaleX, scaleY:hardware_position.fan_3.scaleY, x:hardware_position.fan_3.x, y:hardware_position.fan_3.y});
+		
+		TweenLite.set($logo, {alpha:0});
+		TweenLite.set($text_1, {alpha:0, x:textOffset});
+		TweenLite.set($text_2, {alpha:0, x:textOffset});
+		TweenLite.set($cta_button, {alpha:0});
+		
+		// test pc-1
+		//TweenLite.set($pc_1, {alpha:1, scaleX:pc_1_position.postion1.scaleX, scaleY:pc_1_position.postion1.scaleY, x:pc_1_position.postion1.x, y:pc_1_position.postion1.y}); // outside
+		//TweenLite.set($pc_1, {alpha:1, scaleX:pc_1_position.postion2.scaleX, scaleY:pc_1_position.postion2.scaleY, x:pc_1_position.postion2.x, y:pc_1_position.postion2.y}); // slide 1
+		//TweenLite.set($pc_1, {alpha:1, scaleX:pc_1_position.postion3.scaleX, scaleY:pc_1_position.postion3.scaleY, x:pc_1_position.postion3.x, y:pc_1_position.postion3.y}); // slide 2
+		//TweenLite.set($pc_1, {alpha:1, scaleX:pc_1_position.postion4.scaleX, scaleY:pc_1_position.postion4.scaleY, x:pc_1_position.postion4.x, y:pc_1_position.postion4.y}); // slide 3
+		//TweenLite.set($pc_1, {alpha:1, scaleX:pc_1_position.postion5.scaleX, scaleY:pc_1_position.postion5.scaleY, x:pc_1_position.postion5.x, y:pc_1_position.postion5.y}); // outside
+		
+		// test pc-2
+		//TweenLite.set($pc_2, {alpha:1, scaleX:pc_2_position.postion1.scaleX, scaleY:pc_2_position.postion1.scaleY, x:pc_2_position.postion1.x, y:pc_2_position.postion1.y}); // outside
+		//TweenLite.set($pc_2, {alpha:1, scaleX:pc_2_position.postion2.scaleX, scaleY:pc_2_position.postion2.scaleY, x:pc_2_position.postion2.x, y:pc_2_position.postion2.y}); // slide 2
+		//TweenLite.set($pc_2, {alpha:1, scaleX:pc_2_position.postion3.scaleX, scaleY:pc_2_position.postion3.scaleY, x:pc_2_position.postion3.x, y:pc_2_position.postion3.y}); // outside
+		
+		// test hardware
+		//TweenLite.set($pc_item_psu, {alpha:1, scaleX:1, scaleY:1, x:0, y:0});
+		//TweenLite.set($pc_item_psu, {alpha:1, scaleX:hardware_position.psu.scaleX, scaleY:hardware_position.psu.scaleY, x:hardware_position.psu.x, y:hardware_position.psu.y});
+		//TweenLite.set($pc_item_fan_1, {alpha:1, scaleX:1, scaleY:1, x:0, y:0});
+		//TweenLite.set($pc_item_fan_1, {alpha:1, scaleX:hardware_position.fan_1.scaleX, scaleY:hardware_position.fan_1.scaleY, x:hardware_position.fan_1.x, y:hardware_position.fan_1.y});
+		//TweenLite.set($pc_item_fan_2, {alpha:1, scaleX:1, scaleY:1, x:0, y:0});
+		//TweenLite.set($pc_item_fan_2, {alpha:1, scaleX:hardware_position.fan_2.scaleX, scaleY:hardware_position.fan_2.scaleY, x:hardware_position.fan_2.x, y:hardware_position.fan_2.y});
+		//TweenLite.set($pc_item_fan_3, {alpha:1, scaleX:1, scaleY:1, x:0, y:0});
+		//TweenLite.set($pc_item_fan_3, {alpha:1, scaleX:hardware_position.fan_3.scaleX, scaleY:hardware_position.fan_3.scaleY, x:hardware_position.fan_3.x, y:hardware_position.fan_3.y});
+		
+		tl.timeScale(1);
+		
+		//====================
+		// animate
+		//====================
+		
+		// show banner
+		tl.to($banner, 0.3, {alpha:1, ease:Power1.easeOut});
+		
+		// restart point
+		tl.add("restart");
+		
+		// slide 1
+		tl.to($pc_1, 0.8, {alpha:1, scaleX:pc_1_position.postion2.scaleX, scaleY:pc_1_position.postion2.scaleY, x:pc_1_position.postion2.x, y:pc_1_position.postion2.y, ease:Power1.easeInOut});
+		
+		tl.to($pc_item_psu, 0.7, {alpha:1, scaleX:1, scaleY:1, x:0, y:0, ease:Power1.easeOut}, "-=0.1");
+		tl.to($pc_item_fan_1, 0.7, {alpha:1, scaleX:1, scaleY:1, x:0, y:0, ease:Power1.easeOut}, "-=0.2");
+		tl.to($pc_item_fan_2, 0.7, {alpha:1, scaleX:1, scaleY:1, x:0, y:0, ease:Power1.easeOut}, "-=0.3");
+		tl.to($pc_item_fan_3, 0.7, {alpha:1, scaleX:1, scaleY:1, x:0, y:0, ease:Power1.easeOut}, "-=0.4");
+		
+		// pause
+		tl.add("pause1", "+="+pause_time_1);
+		
+		// slide 2
+		tl.to($pc_1, 0.6, {scaleX:pc_1_position.postion3.scaleX, scaleY:pc_1_position.postion3.scaleY, x:pc_1_position.postion3.x, y:pc_1_position.postion3.y, ease:Power1.easeInOut}, "pause1");
+		tl.to($pc_2, 0.9, {alpha:1, scaleX:pc_2_position.postion2.scaleX, scaleY:pc_2_position.postion2.scaleY, x:pc_2_position.postion2.x, y:pc_2_position.postion2.y, ease:Power1.easeInOut}, "pause1-=0.3");
+		
+		// pause
+		tl.add("pause2", "+="+pause_time_2);
+		
+		// slide 3
+		tl.to($pc_2, 0.6, {alpha:0, scaleX:pc_2_position.postion3.scaleX, scaleY:pc_2_position.postion3.scaleY, x:pc_2_position.postion3.x, y:pc_2_position.postion3.y, ease:Power1.easeIn}, "pause2");
+		tl.to($pc_1, 0.7, {scaleX:pc_1_position.postion4.scaleX, scaleY:pc_1_position.postion4.scaleY, x:pc_1_position.postion4.x, y:pc_1_position.postion4.y, ease:Power1.easeInOut}, "-=0.6");
+		
+		tl.to($logo, 0.5, {alpha:1, ease:Power1.easeInOut}, "-=0.3");
+		tl.to($text_1, 0.7, {alpha:1, x:0, ease:Power1.easeInOut}, "-=0.3");
+		tl.to($text_2, 0.7, {alpha:1, x:0, ease:Power1.easeInOut}, "-=0.7");
+		tl.to($cta_button, 0.5, {alpha:1, ease:Power1.easeInOut, onComplete:loopCount}, "+=0.2");
+		
+		// pause
+		tl.add("pause3", "+="+pause_time_3);
+		
+		// restart
+		tl.to($logo, 0.5, {alpha:0, ease:Power1.easeIn}, "pause3");
+		tl.to($text_1, 0.5, {alpha:0, ease:Power1.easeIn}, "pause3");
+		tl.to($text_2, 0.5, {alpha:0, ease:Power1.easeIn}, "pause3");
+		tl.to($cta_button, 0.5, {alpha:0, ease:Power1.easeIn}, "pause3");
+		tl.to($pc_1, 0.5, {alpha:0, scaleX:pc_1_position.postion5.scaleX, scaleY:pc_1_position.postion5.scaleY, x:pc_1_position.postion5.x, y:pc_1_position.postion5.y, ease:Power1.easeIn}, "pause3");
+		
+		// pause
+		tl.add("pause4", "+="+pause_time_4);
+		tl.addPause("pause4", restartBanner);
+		
+		// testing playback
+		//tl.play("restart");
+		//tl.play("pause1");
+		//tl.play("pause2");
+		//tl.play("pause3");
+		
+		// count times banner has been played
+		function loopCount() {
+			tl.pause();
+			if(times_played < max_loops) {
+				times_played++;
+				tl.play();
+			}
+		}
+		
+		// do restart
+		function restartBanner() {
+			tl.play("restart");
+		}
+		
+	});
+});

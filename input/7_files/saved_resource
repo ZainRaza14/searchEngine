@@ -1,0 +1,32 @@
+
+var ftGUID_3390565="3889BBB282E386";
+var ftConfID_3390565="11427547";
+var ftParams_3390565="ftx=&fty=&ftadz=&ftscw=&ft_custom=1781800_21881694_232412045&ft_section=general&ftOBA=1&ft_ifb=1&ft_domain=www.gamasutra.com&ft_agentEnv=0&ft_referrer=http%3A%2F%2Fwww.gamasutra.com%2Fview%2Fnews%2F331151%2FFor_Lucas_Pope_Return_of_the_Obra_Dinn_was_a_bunch_of_appealing_design_problems.php&ft_keyword=general&cachebuster=345979.7804953979";
+var ftKeyword_3390565="general";
+var ftCustom_3390565="1781800_21881694_232412045";
+var ftSection_3390565="general";
+var ftSegment_3390565="um2,eqe,epy,epx5155,epx,eny5155,eny,n7h,ael,tg1,rb6,rb6tcl_hometheater,nl2,aelsku9100239,v7t,vye10,vmc";
+var ftSegmentList_3390565=[{s:'um2'},{s:'eqe',t:38981646},{s:'epy'},{m:'c5075_lvdiv',s:'epx5155'},{s:'epx'},{m:'c5075_c5075_div',s:'eny5155'},{s:'eny'},{s:'n7h'},{s:'ael'},{s:'tg1'},{s:'rb6',t:39780000},{s:'rb6tcl_hometheater',t:39780000},{s:'nl2',t:39780000},{m:'c1122_lv',s:'aelsku9100239'},{s:'v7t'},{m:'c7068_gamepass',s:'vye10'},{s:'vmc'}];
+var ftRuleMatch_3390565="00010000";
+var ftTimestamp_3390565="1543776192";
+var ftGeoC2_3390565="us";
+var ftGeoState_3390565="nj";
+var ftGeoCity_3390565="jersey city";
+var ftISP_3390565="mci communications services inc. dba verizon business";
+var ftSpeed_3390565="broadband";
+var ftDMA_3390565="501";
+var ftLong_3390565="-74.0419";
+var ftLat_3390565="40.7331";
+var ftPostal_3390565="07310";
+var ftTimeZone_3390565="-500";
+var ftMobileCarrier_3390565="";
+var ftImp3390565 = {};
+ftImp3390565.privacy = "x";
+ftImp3390565.guidAge = "99";
+ftImp3390565.impID = "EC267F04-0936-62FE-D009-E261916471F8";
+
+ftImp3390565.ft_tpplid = "";
+ftImp3390565.ft_c = {};
+
+document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/339/3390565/2225756/js/j-3390565-2225756.js" id="ftscript_m3390565" name="ftscript_m3390565"></scr'+'ipt>');
+                    

@@ -1,0 +1,219 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0;
+	border: 0 none;
+	outline: 0;
+	font-family: 'Ubuntu', sans-serif;
+	color: #fff;
+}
+
+b {
+	font-weight: 700;
+}
+
+#banner {
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	background-color: #fff;
+}
+
+.banner-size {
+	width: 300px;
+	height: 250px;
+}
+
+.lightbox {
+	overflow: hidden;
+}
+
+/*=============================================
+/* banner content
+/*=============================================*/
+
+.background {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#logo {
+	position: absolute;
+	left: 116px;
+	top: 10px;
+	width: 83px;
+	height: 40px;
+}
+
+#text-1 {
+	position: absolute;
+	left: 118px;
+	top: 65px;
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 27px;
+	text-transform: uppercase;
+}
+
+#text-2 {
+	position: absolute;
+	left: 118px;
+	top: 129px;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+/*==============================
+/* CTA
+/*==============================*/
+
+#clicktag-banner {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 1;
+}
+
+#clicktag-button-wrapper {
+	position: absolute;
+	left: 120px;
+	top: 193px;
+	/*width: 0;*/ /* to center horizontally within container */
+	cursor: pointer;
+	z-index: 2;
+}
+
+.clicktag-halign {
+	margin: 0 auto;
+	display: table;
+}
+
+#clicktag-button {
+	position: relative;
+	padding: 6px 10px;
+	display: table-cell;
+	box-sizing: border-box;
+	vertical-align: middle;
+	background-color: #00bc00;
+	color: #fff;
+	font-size: 19px;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+	-webkit-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+
+#clicktag-button:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+/*==============================
+/* PCs
+/*==============================*/
+
+#pc-wrapper {
+	position: absolute;
+	left: 50px;
+	top: 20px;
+}
+
+#pc-1 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 193px;
+	height: 230px;
+}
+
+#pc-1-piece-1 {
+	position: absolute;
+	left: 0;
+	top: 16px;
+	width: 62px;
+	height: 201px;
+	background-image: url("pc-1.png");
+	background-position: 0 -16px;
+}
+
+#pc-1-piece-2 {
+	position: absolute;
+	left: 40px;
+	top: 0;
+	width: 93px;
+	height: 230px;
+	background-image: url("pc-1.png");
+	background-position: -80px 0;
+}
+
+#pc-1-piece-3 {
+	position: absolute;
+	left: 133px;
+	top: 0;
+	width: 60px;
+	height: 230px;
+	background-image: url("pc-1.png");
+	background-position: -193px 0;
+}
+
+#pc-2 {
+	position: absolute;
+	left: 69px;
+	top: 20px;
+	width: 166px;
+	height: 181px;
+}
+
+#pc-item-fan-1 {
+	position: absolute;
+	left: 73px;
+	top: 44px;
+	width: 99px;
+	height: 106px;
+	background-image: url("hardware.png");
+	background-position: -10px -10px;
+}
+
+#pc-item-fan-2 {
+	position: absolute;
+	left: 38px;
+	top: 50px;
+	width: 41px;
+	height: 44px;
+	background-image: url("hardware.png");
+	background-position: -155px -8px;
+	
+}
+
+#pc-item-fan-3 {
+	position: absolute;
+	left: 16px;
+	top: 33px;
+	width: 33px;
+	height: 106px;
+	background-image: url("hardware.png");
+	background-position: -119px -10px;
+}
+
+#pc-item-psu {
+	position: absolute;
+	left: 23px;
+	top: 149px;
+	width: 67px;
+	height: 64px;
+	background-image: url("hardware.png");
+	background-position: -162px -64px;
+}
